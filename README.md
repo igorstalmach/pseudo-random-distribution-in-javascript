@@ -1,6 +1,6 @@
-# Random distribution in JavaScript
+# Pseudo-random distribution in JavaScript
 
-- [Random distribution in JavaScript](#random-distribution-in-javascript)
+- [Pseudo-random distribution in JavaScript](#pseudo-random-distribution-in-javascript)
   - [Introduction](#introduction)
   - [Motivation](#motivation)
   - [Approach](#approach)
@@ -22,7 +22,7 @@ While developing a Phaser video game I needed to randomly place objects in a 2D 
 
 ## Approach
 
-A random 1.000.000 numbers are generated using each method and saved in a CSV file. Results are then processed by pandas and matplotlib to generate a histogram and calculate a standard deviation. Tests were performed on an Apple M1 MacBook Air with 8GB of RAM and Node.js v20.3.0.
+A random 1.000.000 numbers ([0, 1]) are generated using each method and saved in a CSV file. Results are then processed by pandas and matplotlib to generate a histogram and calculate a standard deviation. Tests were performed on an Apple M1 MacBook Air with 8GB of RAM and Node.js v20.3.0.
 
 ## Results
 
@@ -32,7 +32,7 @@ The `Math.random()` static method returns a floating-point, pseudo-random number
 
 ![Math.random()](/images/math_random_histogram.png)
 
-Standard Deviation: 0.28883
+> Standard Deviation: 0.28883
 
 ### 2. Linear congruential generator
 
@@ -46,7 +46,7 @@ $V_{j+1} = 65539\cdot V_j\, \bmod\, 2^{31}\,$
 
 ![RANDU](/images/randu_histogram.png)
 
-Standard Deviation: 0.28847
+> Standard Deviation: 0.28847
 
 ### 3. Counter-based random number generator (CBRNG)
 
@@ -58,7 +58,7 @@ This implementation is based on the paper [^5] by Sebastiano Vigna and is availa
 
 ![CBRNG](/images/cbrng_histogram.png)
 
-Standard Deviation: 0.28855
+> Standard Deviation: 0.28855
 
 ## References
 
